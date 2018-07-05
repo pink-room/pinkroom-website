@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+
+  li {
+    display: inline;
+    margin-left: 8px;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: $lightblack;
+      &.active {
+        color: $black;
+      }
+    }
+  }
+
+  .left {
+    font-family: 'SangBleuEmpire-Black';
+    color: $black;
+  }
+
+  &.white {
+    .left {
+      color: $offwhite;
+    }
+    li a {
+      color: $lightwhite;
+      &.active {
+        color: $offwhite;
+      }
+    }
+  }
+}

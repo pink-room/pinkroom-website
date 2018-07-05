@@ -1,0 +1,140 @@
+.container, .card {
+  border-radius: 6px;
+
+  &.white {
+    background-color: $offwhite;
+    color: $offblack;
+
+    &.black-back {
+      box-shadow: 2px 2px 150px $darkpink;
+    }
+    &.white-back {
+      box-shadow: 2px 2px 100px $lightblack;
+    }
+  }
+  &.pink, &.green, &.black {
+    &.black-back {
+      box-shadow: 2px 2px 150px $lightpink;
+    }
+    &.white-back {
+      box-shadow: 2px 2px 50px $lightblack;
+    }
+    h2 {
+      color: $offwhite;
+    }
+    h3 {
+      color: $offblack;
+    }
+  }
+  &.pink {
+    background-color: $pink;
+    color: $offwhite;
+  }
+  &.green {
+    background-color: $green;
+    color: $offwhite;
+  }
+  &.black {
+    background-color: $offblack;
+    color: $offwhite;
+  }
+}
+
+.container {
+  padding: 72px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.large, &.small {
+    width: 100%;
+    max-width: 1350px;
+  }
+  &.large {
+    min-height: 500px;
+    margin-bottom: 72px;
+  }
+  &.small {
+    min-height: 150px;
+    padding: 42px;
+  }
+}
+
+.card {
+  padding: 18px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  &.large, &.medium, &.small, &.tiny {
+    min-height: 275px;
+  }
+  &.large {
+    width: 100%;
+  }
+  &.medium {
+    width: calc(80% - 12px);
+  }
+  &.small {
+    width: calc(60% - 12px);
+  }
+  &.tiny {
+    width: calc(40% - 12px);
+  }
+
+  h2 {
+    max-width: 300px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content-width {
+  width: 100%;
+  max-width: 940px;
+
+  .content-row {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    &:first-child {
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .left, .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &.align-left {
+        align-items: flex-start;
+      }
+      &.align-right {
+        align-items: flex-end;
+      }
+    }
+  }
+}

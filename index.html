@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Pink Room - Welcome</title>
     <link rel="stylesheet" href="stylesheets/application.css">
   </head>
-  <body>
+  <body class="black">
+
     <div class="header-container">
       <div id="scene">
         <div data-depth="0.4">
-          <img src="logo.png" alt="" id="logo">
+          <img src="resources/images/logo.png" alt="" id="logo">
         </div>
       </div>
       <div class="background"></div>
@@ -22,27 +23,157 @@
       </div>
     </div>
 
-    <div class="header-container small">
-      <div id="scene2" class="small">
-        <div data-depth="0.2">
-          <img src="logo.png" alt="" id="logo">
+    <div class="container large white black-back">
+      <div class="content-width">
+
+        <div class="content-row">
+          <nav class="black">
+            <div class="left">
+              Pink Room
+            </div>
+            <div class="right">
+              <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
         </div>
-      </div>
-      <div class="background"></div>
-      <div class="wall left"></div>
-      <div class="wall right"></div>
-      <div class="wall top"></div>
-      <div class="wall bottom"></div>
-      <div id="container2">
-        <div id="inner2"></div>
+
+        <div class="content-row">
+          <h1>
+            Hey there!
+            <br>
+            We're <span class="empire-black">busy defying conventions.</span>
+          </h1>
+        </div>
+
+        <div class="content-row">
+          <p>And we <span class="pink">love</span> what we do.</p>
+        </div>
+
+        <div class="content-row">
+          <div class="card-container">
+            <div class="card tiny pink white-back">
+              <h2>
+                How we built our First Product. From start, to finish.
+              </h2>
+              <a href="#" class="card-link">
+                Read More
+              </a>
+            </div>
+            <div class="card small green white-back">
+              <h2>
+                About Pink Room.
+              </h2>
+              <a href="#" class="card-link">
+                Read More
+              </a>
+            </div>
+            <div class="card large black white-back">
+              <h2>
+                How we built our First Product. From start, to finish.
+              </h2>
+              <a href="#" class="card-link pink">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
+    <div class="container small pink black-back">
+      <div class="content-width">
+        <div class="content-container">
+          <div class="left align-left">
+            <h2>Cool, right? Looking for the best team for you project?</h2>
+            <br>
+            <h3>Let’s chat.</h3>
+          </div>
+          <div class="right align-right">
+            <div class="button white">
+              Click here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script src="wall-big.js"></script>
-    <script src="wall-small.js"></script>
+    <div class="content-width">
+      <footer class="white">
+
+        <div class="footer-column">
+          <img src="resources/images/pinkroom-circle.svg" alt="PR Circle logo">
+        </div>
+
+        <div class="footer-column">
+          <h4>The Room</h4>
+          <ul>
+            <li><a href="#">Who we are</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Products</a></li>
+          </ul>
+          <div class="social"></div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Product Tour</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">The Team</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Product Updates</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="social"></div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Data Security</a></li>
+            <li><a href="#">Site Performance</a></li>
+            <li><a href="#">Action Plan</a></li>
+          </ul>
+          <div class="social"></div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Information</a></li>
+            <li><a href="#">Opt-out</a></li>
+            <li><a href="#">GDPR Commitment</a></li>
+          </ul>
+          <div class="social"></div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Nest Collective</li>
+            <li>Av. Sá da Bandeira,</li>
+            <li>nº33, 2ª Fase, 6A</li>
+            <li>3000-351 Coimbra</li>
+            <li>Portugal</li>
+          </ul>
+          <div class="social"></div>
+        </div>
+
+      </footer>
+    </div>
+
+    <script src="scripts/wall-big.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="parallax.js"></script>
+    <script src="scripts/parallax.js"></script>
 
   </body>
 </html>

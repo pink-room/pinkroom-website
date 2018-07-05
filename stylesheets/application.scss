@@ -1,7 +1,13 @@
 @import
-'resources/reset',
-'resources/mixins',
-'resources/fonts',
 'resources/palette',
+'resources/reset',
+'resources/fonts',
+'resources/hierarchy',
+
 'atoms/base',
-'blocs/header'
+
+'blocs/header',
+'blocs/navbar',
+'blocs/footer',
+'blocs/container',
+'blocs/button'

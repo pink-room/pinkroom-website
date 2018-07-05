@@ -1,1 +1,89 @@
-@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i';
+/*
+CooperHewitt Font Family Imports
+*/
+
+@font-face {
+  font-family: 'CooperHewitt-Bold';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Bold.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-BoldItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-BoldItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Book';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Book.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-BookItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-BookItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Heavy';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Heavy.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-HeavyItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-HeavyItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Light';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Light.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-LightItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-LightItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Medium';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Medium.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-MediumItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-MediumItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Semibold';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Semibold.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-SemiboldItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-SemiboldItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-Thin';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-Thin.woff') format('woff')
+}
+@font-face {
+  font-family: 'CooperHewitt-ThinItalic';
+  src: url('../resources/fonts/CooperHewitt/CooperHewitt-ThinItalic.woff') format('woff')
+}
+
+
+/*
+SangBleu Font Family Imports
+*/
+
+/*
+Empire
+*/
+@font-face {
+  font-family: 'SangBleuEmpire-Black';
+  src: url('../resources/fonts/SangBleu/Empire/SangBleuEmpire-Black.woff') format('woff')
+}
+
+/*
+Kingdom
+*/
+@font-face {
+  font-family: 'SangBleuKingdom-Light';
+  src: url('../resources/fonts/SangBleu/Kingdom/SangBleuKingdom-Light.woff') format('woff')
+}
+@font-face {
+  font-family: 'SangBleuKingdom-LightItalic';
+  src: url('../resources/fonts/SangBleu/Kingdom/SangBleuKingdom-LightItalic.woff') format('woff')
+}
+@font-face {
+  font-family: 'SangBleuKingdom-Medium';
+  src: url('../resources/fonts/SangBleu/Kingdom/SangBleuKingdom-Medium.woff') format('woff')
+}

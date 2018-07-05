@@ -1,0 +1,51 @@
+*, html, body {
+  font-family: 'CooperHewitt-Book';
+}
+
+.empire-black {
+  font-family: 'SangBleuEmpire-Black';
+}
+.pink {
+  color: $pink;
+}
+
+h1 {
+  font-size: 72px;
+  font-family: 'SangBleuKingdom-Light';
+  font-weight: lighter;
+}
+
+h2, h3 {
+  font-size: 24px;
+  line-height: 130%;
+}
+
+h2 {
+  font-family: 'SangBleuKingdom-Medium';
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: 'CooperHewitt-Book';
+}
+
+a {
+  &.card-link {
+    font-family: 'CooperHewitt-Medium';
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: $offblack;
+    line-height: 38px;
+
+    &.pink {
+      color: $pink;
+    }
+  }
+}
+
+p {
+  font-size: 16px;
+  font-family: 'CooperHewitt-Book';
+  color: $offblack;
+}

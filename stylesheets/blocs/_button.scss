@@ -1,0 +1,23 @@
+.button, button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  min-height: 42px;
+  min-width: 112px;
+  max-width: 125px;
+  padding: 8px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-family: 'CooperHewitt-Book';
+  box-shadow: 1px 1px 30px $lightblack;
+
+  &.white {
+    background-color: $offwhite;
+    color: $offblack;
+  }
+  &.pink {
+    background-color: $pink;
+    color: $offwhite;
+  }
+}

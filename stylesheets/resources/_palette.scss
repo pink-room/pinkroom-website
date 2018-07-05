@@ -1,13 +1,22 @@
 /*
 --------------------------------------------------------------------------------
-COLORS - alphabetical order
+COLORS
 --------------------------------------------------------------------------------
 */
+
+$lightblack: rgba(#000000, 0.3);
 $black: #000000;
-$blue:  #1234ff;
-$dark:  #57576d;
-$light: #eaebec;
-$red:   #e15555;
+$offblack: #272727;
+
+$lightgrey: #BBBBBB;
+$grey: #7E7E7E;
+
+$lightwhite: rgba(#ffffff, 0.3);
 $white: #ffffff;
+$offwhite: #FAFAFA;
+
+$green: #7AE1BF;
+
+$lightpink: rgba(#f57eb6, 0.5);
 $pink: #F57EB6;
-$darkpink: #d4136e;
+$darkpink: rgba(#d4136e, 0.8);
