@@ -1,0 +1,108 @@
+form, input, textarea, select {
+  font-size: 28px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+input, textarea {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  background-color: $offblack;
+  border-radius: 6px;
+  color: $offwhite;
+  border: solid 0px $pink;
+  transition: border 0.2s;
+
+  &:focus {
+    border: solid 2px $pink;
+  }
+}
+
+form {
+  .input-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span {
+      white-space: nowrap;
+      margin-right: 12px;
+    }
+  }
+}
+
+select {
+  margin-top: 0;
+  margin-bottom: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 12px;
+  padding-right: 38px;
+  padding-top: 6px;
+  background-color: $offblack;
+  border-radius: 6px;
+  color: $offwhite;
+  height: 48px;
+  position: relative;
+  border: 0;
+}
+
+.select-container {
+  display: inline;
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    right: 18px;
+    top: -8px;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+option {
+  &[value=deault] {
+    color: $grey;
+  }
+}
+.default-text {
+  color: $grey;
+}
+
+input {
+  height: 48px;
+  width: 100%;
+
+  &.invisible {
+    opacity: 0;
+    width: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &[type=submit] {
+    background-color: $pink;
+    width: auto;
+    margin-top: 18px;
+  }
+}
+
+textarea {
+  padding-top: 12px;
+  padding-bottom: 8px;
+  width: 100%;
+  min-height: 150px;
+}
+
+::placeholder {
+  color: $grey;
+  opacity: 1;
+}
+
+form .button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

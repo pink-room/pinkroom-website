@@ -77,16 +77,16 @@
 
   &.small {
     .left {
-      border-width: 150px 0 150px 50vw;
+      border-width: 150px 0 150px calc(50vw - 72px);
     }
     .right {
-      border-width: 150px 50vw 150px 0;
+      border-width: 150px calc(50vw - 72px) 150px 0;
     }
     .top {
-      border-width: 150px 50vw 0 50vw;
+      border-width: 150px calc(50vw - 72px) 0 calc(50vw - 72px);
     }
     .bottom {
-      border-width: 0 50vw 150px 50vw;
+      border-width: 0 calc(50vw - 72px) 150px calc(50vw - 72px);
     }
   }
 }

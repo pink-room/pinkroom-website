@@ -7,6 +7,22 @@
   </head>
   <body class="black">
 
+    <div class="header-container small">
+      <div id="scene2" class="small">
+        <div data-depth="0.2">
+          <img src="../resources/images/logo.png" alt="" id="logo">
+        </div>
+      </div>
+      <div class="background"></div>
+      <div class="wall left"></div>
+      <div class="wall right"></div>
+      <div class="wall top"></div>
+      <div class="wall bottom"></div>
+      <div id="container2">
+        <div id="inner2"></div>
+      </div>
+    </div>
+
     <div class="container large white black-back contact">
       <div class="content-width">
 
@@ -27,24 +43,41 @@
         </div>
 
         <div class="content-row">
-          <h1 class="black">
-            Hello.
-          </h1>
-        </div>
-
-        <div class="content-row">
           <div class="content-width">
             <div class="content-container text">
               <div class="left title align-left">
                 <h2>You’re in the right place to talk to the <span class="empire-black">Pink Room.</span></h2>
               </div>
               <div class="right body contact align-left">
-                <p>
-                  Pink Room is a digital product studio housed in Coimbra, Portugal. Focused on mobile and web applications, we walk with our clients through their ideas, from the concept to the Product.
+                <form class="">
+                  I'm a
+                  <div class="select-container">
+                    <select>
+                      <option value="default">Select...</option>
+                      <option value="client">Client</option>
+                      <option value="recruit">Recruit</option>
+                      <option value="media">Influencer</option>
+                    </select>
+                    <div class="arrow">
+                      <img src="../resources/images/arrow.svg" alt="">
+                    </div>
+                  </div>
+                  , looking to get in touch with the team about...
                   <br>
+                  <textarea placeholder="Dear Pink Room, I’m reaching out to talk to you about…"></textarea>
                   <br>
-                  Just like in a green room, Pink Room is the perfect place to focus on developing a product by meeting with clients to further understand the nitty-gritty of the show that’s just about to start. The same way green rooms aren’t green, our room isn’t pink. Our idea of Pink refers to our mindset: true, young and simple.
-                </p>
+                  <div class="input-name">
+                    <span>My name is...</span>
+                    <input type="text" name="name" placeholder="John Doe">
+                  </div>
+                  and my email is... <input class="invisible">
+                  <br>
+                  <input type="text" name="email" placeholder="johndoe@email.com" class="long">
+                  <br>
+                  <div class="button-container">
+                    <input type="submit" name="" value="Submit" class="button"/>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -120,6 +153,10 @@
 
       </footer>
     </div>
+
+    <script src="../scripts/wall-small.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="../scripts/parallax2.js"></script>
 
   </body>
 </html>
