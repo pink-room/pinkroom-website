@@ -5,8 +5,27 @@
 .empire-black {
   font-family: 'SangBleuEmpire-Black';
 }
+.cooper-thin-i {
+  font-family: 'CooperHewitt-LightItalic';
+}
 .pink {
   color: $pink;
+}
+.green {
+  color: $green;
+}
+.crossed {
+  text-decoration: line-through;
+}
+
+p {
+  line-height: 140%;
+}
+
+h1, h2, h3, h4, a, p {
+  &.white {
+    color: $offwhite;
+  }
 }
 
 h1 {

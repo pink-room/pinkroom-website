@@ -44,9 +44,13 @@
   padding: 72px;
   width: 100%;
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-position: top;
+  background-size: cover 60%;
+  background-repeat: no-repeat;
 
   &.large, &.small {
     width: 100%;
@@ -60,15 +64,38 @@
     min-height: 150px;
     padding: 42px;
   }
+
+  &:before {
+    content: "";
+    border-radius: 6px 6px 0px 0px;
+    position: absolute;
+    z-index: 0;
+    height: 60%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.about .content-width .content-row:nth-child(3) {
+    margin-top: 72px;
+  }
+}
+
+.container.about:before {
+  background-image: url('../resources/images/green-placeholder.png');
 }
 
 .card {
   padding: 18px;
   margin-top: 12px;
   margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 
   &.large, &.medium, &.small, &.tiny {
-    min-height: 275px;
+    min-height: 300px;
   }
   &.large {
     width: 100%;
@@ -83,16 +110,39 @@
     width: calc(40% - 12px);
   }
 
-  h2 {
+  h1, h2, h3, h4, p, a {
     max-width: 300px;
   }
 
   &:last-child {
     margin-bottom: 0;
   }
+
+  &.image-right:before {
+    content: "";
+    border-radius: 0px 6px 6px 0px;
+    position: absolute;
+    z-index: 0;
+    width: calc(100% - 300px - 42px);
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.image-right-small:before {
+    width: calc(50% - 24px);
+  }
+}
+
+.card.team.image-right:before {
+  background-image: url('../resources/images/person-placeholder.png');
 }
 
 .content-width {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 940px;
 
@@ -106,6 +156,18 @@
     }
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &.team {
+      &:nth-child(even) {
+        transform: translateX(5%);
+      }
+      &:nth-child(odd) {
+        transform: translateX(-5%);
+      }
+      &:last-child {
+        margin-bottom: 72px;
+      }
     }
   }
 
@@ -122,6 +184,26 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+
+    &.text {
+      margin-top: 64px;
+      justify-content: space-between;
+
+      .left, .right {
+        justify-content: flex-start;
+
+        &.title {
+          max-width: 320px;
+
+          h2 {
+            font-size: 32px;
+          }
+        }
+        &.body {
+          max-width: 400px;
+        }
+      }
+    }
 
     .left, .right {
       width: 50%;
