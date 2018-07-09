@@ -4,6 +4,10 @@ nav {
   justify-content: space-between;
   font-size: 16px;
 
+  ul, li {
+    user-select: none;
+  }
+
   li {
     display: inline;
     margin-left: 8px;
@@ -15,7 +19,8 @@ nav {
     a {
       text-decoration: none;
       color: $lightblack;
-      &.active {
+      transition: all 0.4s;
+      &.active, &:hover {
         color: $black;
       }
     }
@@ -32,7 +37,7 @@ nav {
     }
     li a {
       color: $lightwhite;
-      &.active {
+      &.active, &:hover {
         color: $offwhite;
       }
     }

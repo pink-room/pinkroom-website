@@ -25,6 +25,11 @@ footer {
       font-family: 'CooperHewitt-Medium';
       text-decoration: none;
       color: $lightwhite;
+      transition: all 0.4s;
+
+      &:hover {
+        color: $offwhite;
+      }
     }
 
     img {
@@ -40,6 +45,10 @@ footer {
 
       ul li a, ul li {
         color: $lightgrey;
+
+        &:hover {
+          color: $offblack;
+        }
       }
     }
   }
