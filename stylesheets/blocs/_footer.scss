@@ -8,7 +8,7 @@ footer {
   .footer-column {
     width: calc(100% / 6);
 
-    h4 {
+    h5 {
       font-size: 18px;
       font-family: 'CooperHewitt-Semibold';
       color: $offwhite;
@@ -39,7 +39,7 @@ footer {
 
   &.black {
     .footer-column {
-      h4 {
+      h5 {
         color: $offblack;
       }
 

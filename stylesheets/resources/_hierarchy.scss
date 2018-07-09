@@ -48,6 +48,16 @@ h3 {
   font-family: 'CooperHewitt-Book';
 }
 
+h4 {
+  font-size: 32px;
+  font-family: 'SangBleuKingdom-Regular';
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $lightblack;
+  margin-bottom: 12px;
+  margin-top: 42px;
+}
+
 a {
   &.card-link {
     font-family: 'CooperHewitt-Medium';

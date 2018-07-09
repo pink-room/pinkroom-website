@@ -70,7 +70,7 @@
     border-radius: 6px 6px 0px 0px;
     position: absolute;
     z-index: 0;
-    height: 60%;
+    height: 55%;
     width: 100%;
     top: 0;
     left: 0;
@@ -109,6 +109,9 @@
   &.tiny {
     width: calc(40% - 12px);
   }
+  &.half {
+    width: calc(50% - 12px);
+  }
 
   h1, h2, h3, h4, p, a {
     max-width: 300px;
@@ -134,9 +137,40 @@
   &.image-right-small:before {
     width: calc(50% - 24px);
   }
+
+  &.project {
+    p, a {
+      max-width: 380px;
+    }
+    p {
+      color: $offwhite;
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+
+    p {
+      text-transform: uppercase;
+      font-family: 'CooperHewitt-Medium';
+      font-size: 10px;
+      line-height: 38px;
+      margin-right: 12px;
+
+      &:before {
+        content: "#";
+      }
+    }
+  }
 }
 
 .card.team.image-right:before {
+  background-image: url('../resources/images/person-placeholder.png');
+}
+
+.card.project.image-right:before {
   background-image: url('../resources/images/person-placeholder.png');
 }
 
