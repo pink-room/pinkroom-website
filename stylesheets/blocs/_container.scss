@@ -75,6 +75,9 @@
     min-height: 150px;
     padding: 42px;
   }
+  &.contact {
+    margin-bottom: 0;
+  }
 
   &:before {
     content: "";
@@ -90,6 +93,18 @@
   }
 
   &.about .content-width .content-row:nth-child(3) {
+    margin-top: 72px;
+  }
+
+  &.home-nav {
+    position: absolute;
+    height: calc(100vh + 72px + 19px);
+    width: calc(100% - 72px * 2);
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 72px;
   }
 }
@@ -276,6 +291,9 @@
         }
         &.body {
           max-width: 400px;
+          &.contact {
+            max-width: 500px;
+          }
         }
       }
     }
