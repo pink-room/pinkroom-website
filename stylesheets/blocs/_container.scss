@@ -38,6 +38,17 @@
     background-color: $offblack;
     color: $offwhite;
   }
+
+  &.transparent {
+    &.black-back {
+      background-color: transparent;
+      color: $offwhite;
+    }
+    &.white-back {
+      background-color: transparent;
+      color: $offblack;
+    }
+  }
 }
 
 .container {
@@ -117,6 +128,10 @@
     max-width: 300px;
   }
 
+  &.image-left {
+    padding-left: calc(20% + 12px);
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -134,6 +149,20 @@
     background-size: cover;
   }
 
+  &.image-left:before {
+    content: "";
+    border-radius: 6px;
+    box-shadow: 2px 2px 50px $lightblack;
+    position: absolute;
+    z-index: 0;
+    width: calc(50% - 48px);
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
   &.image-right-small:before {
     width: calc(50% - 24px);
   }
@@ -144,6 +173,14 @@
     }
     p {
       color: $offwhite;
+    }
+  }
+
+  &.transparent {
+    &.project {
+      p {
+        color: $offblack;
+      }
     }
   }
 
@@ -171,6 +208,10 @@
 }
 
 .card.project.image-right:before {
+  background-image: url('../resources/images/person-placeholder.png');
+}
+
+.card.project.image-left:before {
   background-image: url('../resources/images/person-placeholder.png');
 }
 
