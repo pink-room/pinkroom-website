@@ -7,17 +7,29 @@
 
     &.black-back {
       box-shadow: 2px 2px 150px $darkpink;
+      @media only screen and (max-width: 760px) {
+        box-shadow: 2px 2px 80px $darkpink;
+      }
     }
     &.white-back {
       box-shadow: 2px 2px 100px $lightblack;
+      @media only screen and (max-width: 760px) {
+        box-shadow: 2px 2px 50px $lightblack;
+      }
     }
   }
   &.pink, &.green, &.black {
     &.black-back {
       box-shadow: 2px 2px 150px $lightpink;
+      @media only screen and (max-width: 760px) {
+        box-shadow: 2px 2px 80px $lightpink;
+      }
     }
     &.white-back {
       box-shadow: 2px 2px 50px $lightblack;
+      @media only screen and (max-width: 760px) {
+        box-shadow: 2px 2px 30px $lightblack;
+      }
     }
     h2 {
       color: $offwhite;
@@ -70,6 +82,13 @@
   &.large {
     min-height: 500px;
     margin-bottom: 72px;
+
+    @media only screen and (max-width: 760px) {
+      margin-bottom: 48px;
+    }
+    @media only screen and (max-width: 550px) {
+      margin-bottom: 24px;
+    }
   }
   &.small {
     min-height: 150px;
@@ -90,10 +109,33 @@
     left: 0;
     background-position: center;
     background-size: cover;
+
+    @media only screen and (max-width: 780px) {
+      height: 48%;
+    }
+    @media only screen and (max-width: 760px) {
+      height: 45%;
+    }
+    @media only screen and (max-width: 620px) {
+      height: 45%;
+    }
+    @media only screen and (max-width: 470px) {
+      height: 40%;
+    }
+    @media only screen and (max-width: 390px) {
+      height: 35%;
+    }
   }
 
   &.about .content-width .content-row:nth-child(3) {
     margin-top: 72px;
+
+    @media only screen and (max-width: 760px) {
+      margin-top: 48px;
+    }
+    @media only screen and (max-width: 550px) {
+      margin-top: 24px;
+    }
   }
 
   &.home-nav {
@@ -106,11 +148,42 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 72px;
+
+    @media only screen and (max-width: 760px) {
+      margin-top: 48px;
+      height: calc(100vh + 48px + 19px);
+      width: calc(100% - 48px * 2);
+    }
+    @media only screen and (max-width: 550px) {
+      margin-top: 24px;
+      height: calc(100vh + 24px + 19px);
+      width: calc(100% - 24px * 2);
+    }
+  }
+
+  @media only screen and (max-width: 760px) {
+    padding: 48px;
+  }
+  @media only screen and (max-width: 550px) {
+    padding: 24px;
   }
 }
 
 .container.about:before {
   background-image: url('../resources/images/green-placeholder.png');
+}
+
+
+.card.team.image-right:before {
+  background-image: url('../resources/images/person-placeholder.png');
+}
+
+.card.project.image-right:before {
+  background-image: url('../resources/images/person-placeholder.png');
+}
+
+.card.project.image-left:before {
+  background-image: url('../resources/images/person-placeholder.png');
 }
 
 .card {
@@ -139,12 +212,38 @@
     width: calc(50% - 12px);
   }
 
+  @media only screen and (max-width: 760px) {
+    &.medium, &.small, &.tiny, &.half {
+      width: calc(50% - 12px);
+    }
+  }
+  @media only screen and (max-width: 620px) {
+    &.large, &.medium, &.small, &.tiny, &.half {
+      width: 100%;
+      min-height: 200px;
+    }
+  }
+
   h1, h2, h3, h4, p, a {
     max-width: 300px;
+
+    @media only screen and (max-width: 870px) {
+      max-width: 250px;
+    }
+
+    @media only screen and (max-width: 700px) {
+      max-width: 300px;
+    }
   }
 
   &.image-left {
     padding-left: calc(20% + 12px);
+
+    @media only screen and (max-width: 980px) {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0;
+    }
   }
 
   &:last-child {
@@ -162,6 +261,14 @@
     top: 0;
     background-position: center;
     background-size: cover;
+
+    @media only screen and (max-width: 870px) {
+      width: calc(100% - 250px);
+    }
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
   }
 
   &.image-left:before {
@@ -176,10 +283,32 @@
     top: 0;
     background-position: center;
     background-size: cover;
+
+    @media only screen and (max-width: 980px) {
+      display: none;
+    }
+    @media only screen and (max-width: 620px) {
+      display: flex;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      top: calc(100% - 24px);
+      background-image: none;
+      background-color: $offblack;
+    }
   }
 
   &.image-right-small:before {
     width: calc(50% - 24px);
+
+    @media only screen and (max-width: 870px) {
+      width: calc(30% - 24px);
+    }
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
   }
 
   &.project {
@@ -188,6 +317,12 @@
     }
     p {
       color: $offwhite;
+    }
+
+    &.image-right-small {
+      p, a {
+        max-width: 300px;
+      }
     }
   }
 
@@ -216,18 +351,18 @@
       }
     }
   }
-}
 
-.card.team.image-right:before {
-  background-image: url('../resources/images/person-placeholder.png');
-}
-
-.card.project.image-right:before {
-  background-image: url('../resources/images/person-placeholder.png');
+  @media only screen and (max-width: 760px) {
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 }
 
 .card.project.image-left:before {
-  background-image: url('../resources/images/person-placeholder.png');
+  @media only screen and (max-width: 620px) {
+    background-image: none;
+  }
 }
 
 .content-width {
@@ -257,6 +392,19 @@
       }
       &:last-child {
         margin-bottom: 72px;
+
+        @media only screen and (max-width: 760px) {
+          margin-bottom: 48px;
+        }
+        @media only screen and (max-width: 550px) {
+          margin-bottom: 24px;
+        }
+      }
+
+      @media only screen and (max-width: 760px) {
+        &:nth-child(odd), &:nth-child(even) {
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -287,6 +435,18 @@
 
           h2 {
             font-size: 32px;
+
+            @media only screen and (max-width: 350px) {
+              font-size: 22px;
+            }
+          }
+
+          @media only screen and (min-width: 760px) {
+            margin-right: 32px;
+          }
+
+          @media only screen and (max-width: 760px) {
+            margin-bottom: 18px;
           }
         }
         &.body {
@@ -303,12 +463,29 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex-wrap: wrap;
 
       &.align-left {
         align-items: flex-start;
       }
       &.align-right {
         align-items: flex-end;
+
+        @media only screen and (max-width: 760px) {
+          align-items: flex-start;
+        }
+      }
+
+      @media only screen and (max-width: 760px) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 760px) {
+      flex-direction: column;
+
+      .right {
+        margin-top: 24px;
       }
     }
   }

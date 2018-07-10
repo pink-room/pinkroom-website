@@ -1,6 +1,14 @@
 #scene, #scene2 {
   width: 100%;
   height: calc(100vh - 144px);
+
+  @media only screen and (max-width: 760px) {
+    height: calc(100vh - 96px);
+  }
+  @media only screen and (max-width: 550px) {
+    height: calc(100vh - 48px);
+  }
+
   z-index: 10;
 
   display: flex;
@@ -13,6 +21,13 @@
     perspective: 25px;
     transition: transform 0.5s;
     filter: drop-shadow(0 0 3px rgba(black, 0.5));
+
+    @media only screen and (max-width: 550px) {
+      max-width: 224px;
+    }
+    @media only screen and (max-width: 350px) {
+      max-width: 191px;
+    }
   }
 
   &.small {
@@ -20,9 +35,19 @@
     justify-content: flex-start;
     align-items: center;
 
+    @media only screen and (max-width: 760px) {
+      height: 200px;
+      justify-content: center;
+    }
+
     img {
       margin-left: 64px;
       max-width: 124px;
+
+      @media only screen and (max-width: 760px) {
+        margin-left: 0;
+        max-width: 81px;
+      }
     }
   }
 }
@@ -34,6 +59,13 @@
   border-radius: 6px;
   width: 100%;
   margin-bottom: 72px;
+
+  @media only screen and (max-width: 760px) {
+    margin-bottom: 48px;
+  }
+  @media only screen and (max-width: 550px) {
+    margin-bottom: 24px;
+  }
 
   .background {
     width: 100%;
@@ -52,6 +84,13 @@
     border-width: calc(50vh - 72px) 0 calc(50vh - 72px) calc(50vw - 72px);
     border-color: transparent transparent transparent $pink;
     filter: drop-shadow(2px 2px 50px rgba($darkpink, 1));
+
+    @media only screen and (max-width: 760px) {
+      border-width: calc(50vh - 48px) 0 calc(50vh - 48px) calc(50vw - 48px);
+    }
+    @media only screen and (max-width: 550px) {
+      border-width: calc(50vh - 24px) 0 calc(50vh - 24px) calc(50vw - 24px);
+    }
   }
   .right {
     right: 0;
@@ -59,6 +98,13 @@
     border-width: calc(50vh - 72px) calc(50vw - 72px) calc(50vh - 72px) 0;
     border-color: transparent $pink transparent transparent;
     filter: drop-shadow(2px 2px 100px rgba($darkpink, 1));
+
+    @media only screen and (max-width: 760px) {
+      border-width: calc(50vh - 48px) calc(50vw - 48px) calc(50vh - 48px) 0;
+    }
+    @media only screen and (max-width: 550px) {
+      border-width: calc(50vh - 24px) calc(50vw - 24px) calc(50vh - 24px) 0;
+    }
   }
   .top {
     left: 0;
@@ -66,6 +112,13 @@
     border-width: calc(50vh - 72px) calc(50vw - 72px) 0 calc(50vw - 72px);
     border-color: rgba($pink, 0.5) transparent transparent transparent;
     filter: drop-shadow(2px 2px 50px rgba($darkpink, 1));
+
+    @media only screen and (max-width: 760px) {
+      border-width: calc(50vh - 48px) calc(50vw - 48px) 0 calc(50vw - 48px);
+    }
+    @media only screen and (max-width: 550px) {
+      border-width: calc(50vh - 24px) calc(50vw - 24px) 0 calc(50vw - 24px);
+    }
   }
   .bottom {
     left: 0;
@@ -73,20 +126,51 @@
     border-width: 0 calc(50vw - 72px) calc(50vh - 72px) calc(50vw - 72px);
     border-color: transparent transparent rgba($pink, 0.5) transparent;
     filter: drop-shadow(2px 2px 50px rgba($darkpink, 1));
+
+    @media only screen and (max-width: 760px) {
+      border-width: 0 calc(50vw - 48px) calc(50vh - 48px) calc(50vw - 48px);
+    }
+    @media only screen and (max-width: 550px) {
+      border-width: 0 calc(50vw - 24px) calc(50vh - 24px) calc(50vw - 24px);
+    }
   }
 
   &.small {
     .left {
       border-width: 150px 0 150px calc(50vw - 72px);
+      @media only screen and (max-width: 760px) {
+        border-width: 100px 0 100px calc(50vw - 48px);
+      }
+      @media only screen and (max-width: 550px) {
+        border-width: 100px 0 100px calc(50vw - 24px);
+      }
     }
     .right {
       border-width: 150px calc(50vw - 72px) 150px 0;
+      @media only screen and (max-width: 760px) {
+        border-width: 100px calc(50vw - 48px) 100px 0;
+      }
+      @media only screen and (max-width: 550px) {
+        border-width: 100px calc(50vw - 24px) 100px 0;
+      }
     }
     .top {
       border-width: 150px calc(50vw - 72px) 0 calc(50vw - 72px);
+      @media only screen and (max-width: 760px) {
+        border-width: 100px calc(50vw - 48px) 0 calc(50vw - 48px);
+      }
+      @media only screen and (max-width: 550px) {
+        border-width: 100px calc(50vw - 24px) 0 calc(50vw - 24px);
+      }
     }
     .bottom {
       border-width: 0 calc(50vw - 72px) 150px calc(50vw - 72px);
+      @media only screen and (max-width: 760px) {
+        border-width: 0 calc(50vw - 48px) 100px calc(50vw - 48px);
+      }
+      @media only screen and (max-width: 550px) {
+        border-width: 0 calc(50vw - 24px) 100px calc(50vw - 24px);
+      }
     }
   }
 }

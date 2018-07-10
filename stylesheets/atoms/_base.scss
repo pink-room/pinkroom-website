@@ -12,4 +12,11 @@ body {
   &.white {
     background: $offwhite;
   }
+
+  @media only screen and (max-width: 760px) {
+    padding: 48px;
+  }
+  @media only screen and (max-width: 550px) {
+    padding: 24px;
+  }
 }

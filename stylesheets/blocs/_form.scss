@@ -2,6 +2,13 @@ form, input, textarea, select {
   font-size: 28px;
   margin-top: 3px;
   margin-bottom: 3px;
+
+  @media only screen and (max-width: 350px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 470px) {
+    font-size: 22px;
+  }
 }
 
 input, textarea {
@@ -17,6 +24,11 @@ input, textarea {
   &:focus {
     border: solid 2px $pink;
   }
+
+  @media only screen and (max-width: 470px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 
 form {
@@ -28,6 +40,15 @@ form {
     span {
       white-space: nowrap;
       margin-right: 12px;
+    }
+
+    @media only screen and (max-width: 625px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      span {
+        margin-bottom: 8px;
+      }
     }
   }
 }
@@ -47,6 +68,10 @@ select {
   height: 48px;
   position: relative;
   border: 0;
+
+  @media only screen and (max-width: 470px) {
+    height: 42px;
+  }
 }
 
 .select-container {
@@ -75,6 +100,11 @@ input {
   height: 48px;
   width: 100%;
 
+  @media only screen and (max-width: 470px) {
+    height: 42px;
+    margin-top: 3px;
+  }
+
   &.invisible {
     opacity: 0;
     width: 0;
@@ -94,6 +124,10 @@ textarea {
   padding-bottom: 8px;
   width: 100%;
   min-height: 150px;
+
+  @media only screen and (max-width: 470px) {
+    padding-top: 8px;
+  }
 }
 
 ::placeholder {
