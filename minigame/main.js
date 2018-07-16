@@ -5,16 +5,16 @@
  */
 
 var map = [ // 1  2  3  4  5  6  7  8  9
-           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,], // 0
-           [1, 0, 0, 0, 0, 0, 0, 1, 1, 1,], // 1
-           [1, 1, 0, 0, 2, 0, 0, 0, 0, 1,], // 2
-           [1, 0, 0, 0, 0, 2, 0, 0, 0, 1,], // 3
-           [1, 0, 0, 2, 0, 0, 2, 0, 0, 1,], // 4
-           [1, 0, 0, 0, 2, 0, 0, 0, 1, 1,], // 5
-           [1, 1, 1, 0, 0, 0, 0, 1, 1, 1,], // 6
-           [1, 1, 1, 0, 0, 1, 0, 0, 1, 1,], // 7
-           [1, 1, 1, 1, 1, 1, 0, 0, 1, 1,], // 8
-           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,], // 9
+           [1, 1, 1, 1, 1, 1, 1, 1, 1], // 0
+           [1, 1, 1, 1, 0, 1, 1, 1, 1], // 1
+           [1, 1, 1, 1, 0, 1, 1, 1, 1], // 2
+           [1, 1, 1, 1, 0, 1, 1, 1, 1], // 3
+           [1, 1, 1, 1, 0, 1, 1, 1, 1], // 4
+           [1, 0, 0, 0, 0, 0, 0, 0, 1], // 5
+           [1, 0, 0, 0, 0, 0, 0, 0, 1], // 6
+           [1, 0, 1, 1, 0, 1, 1, 0, 1], // 7
+           [1, 0, 1, 0, 0, 0, 1, 0, 1], // 8
+           [1, 1, 1, 1, 1, 1, 1, 1, 1], // 9
            ], mapW = map.length, mapH = map[0].length;
 
 // Semi-constants
@@ -27,10 +27,11 @@ var WIDTH = window.innerWidth,
 	LOOKSPEED = 0.075,
 	BULLETMOVESPEED = MOVESPEED * 5,
 	NUMAI = 5,
+	SPEED = 0.01,
 	PROJECTILEDAMAGE = 20;
 // Global vars
 var t = THREE, scene, cam, renderer, controls, clock, projector, model, skin;
-var runAnim = true, mouse = { x: 0, y: 0 }, kills = 0, health = 100;
+var runAnim = true, mouse = { x: 0, y: 0 }, kills = 0, health = 10000000;
 var healthCube, lastHealthPickup = 0;
 /*
 var finder = new PF.AStarFinder({ // Defaults to Manhattan heuristic
@@ -48,15 +49,6 @@ $(document).ready(function() {
 		setInterval(drawRadar, 1000);
 		animate();
 	});
-	/*
-	new t.ColladaLoader().load('models/Yoshi/Yoshi.dae', function(collada) {
-		model = collada.scene;
-		skin = collada.skins[0];
-		model.scale.set(0.2, 0.2, 0.2);
-		model.position.set(0, 5, 0);
-		scene.add(model);
-	});
-	*/
 });
 
 // Setup
@@ -64,11 +56,13 @@ function init() {
 	clock = new t.Clock(); // Used in render() for controls.update()
 	projector = new t.Projector(); // Used in bullet projection
 	scene = new t.Scene(); // Holds all objects in the canvas
-	scene.fog = new t.FogExp2(0x272727, 0.0005); // color, density #D6F1FF
+	scene.fog = new t.FogExp2(0x621037, 0.0010); // color, density #621037 #272727
 
 	// Set up camera
 	cam = new t.PerspectiveCamera(60, ASPECT, 1, 10000); // FOV, aspect, near, far
 	cam.position.y = UNITSIZE * .2;
+	cam.position.x = UNITSIZE * -4;
+	cam.position.z = UNITSIZE * -1;
 	scene.add(cam);
 
 	// Camera moves with mouse, flies around with WASD/arrow keys
@@ -104,7 +98,7 @@ function init() {
 	});
 
 	// Display HUD
-	$('body').append('<canvas id="radar" width="200" height="200"></canvas>');
+	$('body').append('<canvas id="radar" width="200" height="180"></canvas>');
 	$('body').append('<div id="hud"><p>Health: <span id="health">100</span><br />Score: <span id="score">0</span></p></div>');
 	$('body').append('<div id="credits"><p>WASD to move, mouse to look, click to shoot</p></div>');
 
@@ -223,22 +217,6 @@ function render() {
 			scene.remove(a);
 			addAI();
 		}
-		/*
-		var c = getMapSector(a.position);
-		if (a.pathPos == a.path.length-1) {
-			console.log('finding new path for '+c.x+','+c.z);
-			a.pathPos = 1;
-			a.path = getAIpath(a);
-		}
-		var dest = a.path[a.pathPos], proportion = (c.z-dest[1])/(c.x-dest[0]);
-		a.translateX(aispeed * proportion);
-		a.translateZ(aispeed * 1-proportion);
-		console.log(c.x, c.z, dest[0], dest[1]);
-		if (c.x == dest[0] && c.z == dest[1]) {
-			console.log(c.x+','+c.z+' reached destination');
-			a.PathPos++;
-		}
-		*/
 		var cc = getMapSector(cam.position);
 		if (Date.now() > a.lastShot + 750 && distance(c.x, c.z, cc.x, cc.z) < 2) {
 			createBullet(a);
@@ -257,20 +235,6 @@ function render() {
 		$('#intro').html('<div class="content-width"><div class="content-row"><h1>☠️</h1></div><div class="content-row"><div class="button white">Click to restart...</div></div></div>');
 		$('#intro').one('click', function() {
 			location = location;
-			/*
-			$(renderer.domElement).fadeIn();
-			$('#radar, #hud, #credits').fadeIn();
-			$(this).fadeOut();
-			runAnim = true;
-			animate();
-			health = 100;
-			$('#health').html(health);
-			kills--;
-			if (kills <= 0) kills = 0;
-			$('#score').html(kills * 100);
-			cam.translateX(-cam.position.x);
-			cam.translateZ(-cam.position.z);
-			*/
 		});
 	}
 }
@@ -282,7 +246,7 @@ function setupScene() {
 	// Geometry: floor
 	var floor = new t.Mesh(
 			new t.CubeGeometry(units * UNITSIZE, 10, units * UNITSIZE),
-			new t.MeshLambertMaterial({color: 0xd4136e,/*map: t.ImageUtils.loadTexture('images/floor-1.jpg')*/})
+			new t.MeshLambertMaterial({color: 0xd4136e,/*map: t.ImageUtils.loadTexture('images/floor-1.jpg')*/}) //  #710d3c
 	);
 	scene.add(floor);
 
@@ -314,10 +278,10 @@ function setupScene() {
 	scene.add(healthcube);
 
 	// Lighting
-	var directionalLight1 = new t.DirectionalLight( 0xf57eb6, 1 );
+	var directionalLight1 = new t.DirectionalLight( 0xffffff, 1 );
 	directionalLight1.position.set( 0.5, 1, 0.5 );
 	scene.add( directionalLight1 );
-	var directionalLight2 = new t.DirectionalLight( 0xf57eb6, 1 );
+	var directionalLight2 = new t.DirectionalLight( 0xffffff, 1 );
 	directionalLight2.position.set( -0.5, -1, -0.5 );
 	scene.add( directionalLight2 );
 }
@@ -451,46 +415,59 @@ function drawRadar() {
 }
 
 var bullets = [];
-var sphereMaterial = new t.MeshBasicMaterial({color: 0x7AE1BF});
-var sphereGeo = new t.SphereGeometry(4, 12, 12);
+
 function createBullet(obj) {
 	if (obj === undefined) {
 		obj = cam;
 	}
-	var sphere = new t.Mesh(sphereGeo, sphereMaterial);
-	sphere.position.set(obj.position.x, obj.position.y * 0.8, obj.position.z);
 
-	if (obj instanceof t.Camera) {
-		var vector = new t.Vector3(mouse.x, mouse.y, 1);
-		projector.unprojectVector(vector, obj);
-		sphere.ray = new t.Ray(
-				obj.position,
-				vector.subSelf(obj.position).normalize()
-		);
-	}
-	else {
-		var vector = cam.position.clone();
-		sphere.ray = new t.Ray(
-				obj.position,
-				vector.subSelf(obj.position).normalize()
-		);
-	}
-	sphere.owner = obj;
-	bullets.push(sphere);
-	scene.add(sphere);
+  //Manager from ThreeJs to track a loader and its status
+  var loader = new t.OBJLoader();
 
-	return sphere;
+  //Launch loading of the obj file, addBananaInScene is the callback when it's ready
+  loader.load('3d/banana.obj', function(object) {
+    banana = object;
+    //Move the banana in the scene
+    //Go through all children of the loaded object and search for a Mesh
+    object.traverse(function(child) {
+      //This allow us to check if the children is an instance of the Mesh constructor
+      if (child instanceof THREE.Mesh) {
+        //child.material.color = new t.Color(0xbff944); // #fffd47
+        child.material = new t.MeshLambertMaterial({color: 0xffcf00}); // #ffcf00
+        banana.castShadow = true; //default is false
+        //Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
+        child.geometry.computeVertexNormals();
+      }
+    });
+
+    banana.position.set(obj.position.x, obj.position.y * 0.8, obj.position.z);
+    banana.scale.x = banana.scale.y = banana.scale.z = 0.25;
+    banana.rotation.x -= SPEED * 2;
+    banana.rotation.y -= SPEED;
+    banana.rotation.z -= SPEED * 3;
+
+  	if (obj instanceof t.Camera) {
+  		var vector = new t.Vector3(mouse.x, mouse.y, 1);
+  		projector.unprojectVector(vector, obj);
+  		banana.ray = new t.Ray(
+  				obj.position,
+  				vector.sub(obj.position).normalize()
+  		);
+  	}
+  	else {
+  		var vector = cam.position.clone();
+  		banana.ray = new t.Ray(
+  				obj.position,
+  				vector.sub(obj.position).normalize()
+  		);
+  	}
+  	banana.owner = obj;
+  	bullets.push(banana);
+  	scene.add(banana);
+  });
+
+	return loader;
 }
-
-/*
-function loadImage(path) {
-	var image = document.createElement('img');
-	var texture = new t.Texture(image, t.UVMapping);
-	image.onload = function() { texture.needsUpdate = true; };
-	image.src = path;
-	return texture;
-}
-*/
 
 function onDocumentMouseMove(e) {
 	e.preventDefault();
