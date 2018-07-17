@@ -70,7 +70,10 @@
                 <h2>You’re in the right place to talk to the <span class="empire-black">Pink Room.</span></h2>
               </div>
               <div class="right body contact align-left">
-                <form name="Contact" method="POST" netlify action="/contact/success">
+                <form name="Contact" method="POST" action="/contact/success" netlify-honeypot="bot-field" netlify>
+                  <p hidden>
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                  </p>
                   I'm a
                   <div class="select-container">
                     <select name="role[]">
@@ -85,30 +88,28 @@
                   </div>
                   , looking to get in touch with the team about...
                   <br>
-                  <textarea name="message" placeholder="Dear Pink Room, I’m reaching out to talk to you about…"></textarea>
+                  <textarea type="text" name="message" placeholder="Dear Pink Room, I’m reaching out to talk to you about…"></textarea>
                   <br>
                   <div class="input-name">
                     <span>My name is...</span>
                     <input type="text" name="name" placeholder="John Doe">
                   </div>
-                  and my email is... <input class="invisible">
+                  and my email is...
                   <br>
                   <input type="text" name="email" placeholder="johndoe@email.com" class="long">
                   <br>
                   <br>
 
-                  <div netlify-recaptcha></div>
+                  <div data-netlify-recaptcha></div>
 
                   <div class="button-container">
-                    <button type=”submit”>Send</button>
-                    <!--<input type="submit" name="" value="Submit" class="button"/>-->
+                    <input type="submit" name="" value="Submit" class="button"/>
                   </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
