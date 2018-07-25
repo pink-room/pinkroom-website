@@ -1,0 +1,25 @@
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  opacity: 0;
+}
+
+.pace .pace-progress {
+  background: #2299dd;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.pace {
+  transition: all 1s;
+  z-index: 2000;
+}
